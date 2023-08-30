@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Flask HTML Data Example</title>
+</head>
+<body>
+
+    <script>
+        function onDefault() {
+          document.getElementById("height").value = 161;
+          document.getElementById("weight").value = 61;
+          document.getElementById("k_value").value = 3;
+        }
+        </script>
+   
+
+    <div class="container pt-5">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header text-center">
+                  T-Shirt Predict Data
+                </div>
+                <form  method="POST">
+                    <div class="form-group">
+                      <label for="exampleInputHeight">Height(cm):</label>
+                      <input type="number" class="form-control" id = "height" name = "height" placeholder="Enter your height in cms....">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputWeight">Weight(kg)</label>
+                      <input type="number" class="form-control" id = "weight" name = "weight" placeholder="Enter your weight in kgs....">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputk">The value of K</label>
+                        <input type="number" class="form-control" id = "k_value" name = "k_value" id="exampleInputk" placeholder="Enter the value of K....">
+                      </div>
+                    
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                        <p  class="btn btn-primary mr-5" onclick="onDefault()" id = "default">Default</p>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                       </div>
+                  </form>
+              </div>
+          </div>
+          <div class="col-sm-6">
+            {% if result %}
+            <div class="card">
+                <div class="card-header text-center">
+                  Prediction Result
+                </div>
+                <p>
+                    Mr. Perfect T-shirt size is <h1 class="text-center">{{result}}</h1>
+                </p>
+              </div>
+          </div>
+          {% endif %}
+         
+        </div>
+      </div>
+
+
+
+
+    <!-- {% if result %}
+    <h2>Result:</h2>
+    <p>{{ result }}</p>
+    {% endif %} -->
+</body>
+</html>
